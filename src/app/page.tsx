@@ -10,7 +10,7 @@ export default function Home() {
   const [endMonthDay, setEndMonthDay] = useState("0000");
   const [endHourMinute, setEndHourMinute] = useState("0000");
   const [result, setResult] = useState(0);
-  const handleSubmit = (e: any) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const startDate = new Date(
       `${startYear}-${startMonthDay.slice(0, 2)}-${startMonthDay.slice(
