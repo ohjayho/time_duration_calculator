@@ -9,7 +9,7 @@ export default function Home() {
   const [endYear, setEndYear] = useState(curYear);
   const [endMonthDay, setEndMonthDay] = useState("0000");
   const [endHourMinute, setEndHourMinute] = useState("0000");
-  const [result, setResult] = useState(0);
+  const [result, setResult] = useState<string | number>("시간을 입력해주세요.");
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const startDate = new Date(
@@ -24,7 +24,11 @@ export default function Home() {
     );
     const differenceInMinutes =
       (Number(endDate) - Number(startDate)) / (1000 * 60);
-    setResult(differenceInMinutes);
+    if (differenceInMinutes > 0) {
+      setResult(differenceInMinutes);
+    } else {
+      setResult("시간을 다시 확인해 주세요.");
+    }
     console.log(startDate, endDate);
   };
   return (
@@ -141,12 +145,10 @@ export default function Home() {
           </form>
           <p
             className={`${
-              isNaN(result) || result <= 0 ? "text-lg text-red-600" : "text-3xl"
+              typeof result === "number" ? "text-3xl" : "text-lg text-red-600"
             }`}
           >
-            {isNaN(result) || result <= 0
-              ? "시간을 다시 확인해주세요."
-              : `${result}분`}
+            {typeof result === "number" ? `${result}분` : result}
           </p>
         </div>
       </div>
