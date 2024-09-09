@@ -34,12 +34,12 @@ export default function Home() {
   return (
     <>
       <div className="w-full h-full flex justify-center items-center">
-        <div className="w-[70%] flex flex-col justify-between items-center">
-          <h1 className="text-center text-4xl font-extrabold mb-4">
+        <div className="w-[280px] max-w-[280px] flex flex-col justify-between items-center">
+          <h1 className="text-center text-3xl font-extrabold mb-4">
             주차 시간 계산기
           </h1>
           <h5 className="text-sm text-gray-500  mb-4">
-            *Tab 키로 입력 칸을 이동하고 엔터 키로 계산하면 빠릅니다.
+            *Tab 키로 입력 칸을 이동하고<br></br>엔터 키로 계산하면 빠릅니다.
           </h5>
           <form onSubmit={handleSubmit} className="w-full mb-5">
             <h2 className="text-lg text-blue-500 mb-5">입차</h2>
@@ -50,7 +50,7 @@ export default function Home() {
                 </label>
                 <input
                   type="text"
-                  className="w-20"
+                  className="w-20 border border-gray-400 rounded-md px-1 py-1"
                   name=""
                   id="startYear"
                   defaultValue={startYear}
@@ -65,7 +65,7 @@ export default function Home() {
                 </label>
                 <input
                   type="text"
-                  className="w-20"
+                  className="w-20 border border-gray-400 rounded-md px-1 py-1"
                   name=""
                   id="startMonthDay"
                   placeholder="0101"
@@ -80,7 +80,7 @@ export default function Home() {
                 </label>
                 <input
                   type="text"
-                  className="w-20"
+                  className="w-20 border border-gray-400 rounded-md px-1 py-1"
                   name=""
                   id="startHourMinute"
                   placeholder="0101"
@@ -98,7 +98,7 @@ export default function Home() {
                 </label>
                 <input
                   type="text"
-                  className="w-20"
+                  className="w-20 border border-gray-400 rounded-md px-1 py-1"
                   name=""
                   id="endYear"
                   maxLength={4}
@@ -113,7 +113,7 @@ export default function Home() {
                 </label>
                 <input
                   type="text"
-                  className="w-20"
+                  className="w-20 border border-gray-400 rounded-md px-1 py-1"
                   name=""
                   id="endMonthDay"
                   placeholder="0101"
@@ -123,12 +123,12 @@ export default function Home() {
                 />
               </div>
               <div className="flex flex-col">
-                <label htmlFor="endHourMinute" className="font-extrabold">
+                <label htmlFor="endHourMinute" className="font-extrabold ">
                   시분
                 </label>
                 <input
                   type="text"
-                  className="w-20"
+                  className="w-20 border border-gray-400 rounded-md px-1 py-1"
                   name=""
                   id="endHourMinute"
                   placeholder="0101"
