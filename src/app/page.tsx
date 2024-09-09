@@ -139,8 +139,14 @@ export default function Home() {
               계산
             </button>
           </form>
-          <p className={`${result ? "text-3xl" : "text-lg text-red-600"}`}>
-            {result ? `${result}분` : `시간을 다시 확인해주세요.`}
+          <p
+            className={`${
+              isNaN(result) || result <= 0 ? "text-lg text-red-600" : "text-3xl"
+            }`}
+          >
+            {isNaN(result) || result <= 0
+              ? "시간을 다시 확인해주세요."
+              : `${result}분`}
           </p>
         </div>
       </div>
